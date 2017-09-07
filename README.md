@@ -1,2 +1,3 @@
 # nethherman.github.io
-Nethherman.blogspot.com scripts
+http://Nethherman.blogspot.com
+
