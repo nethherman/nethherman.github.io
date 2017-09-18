@@ -1,0 +1,53 @@
+    <script type=”text/javascript”>
+    function showlatestpostswiththumbs(t){document.write(‘<ul class=”recent-posts-container”>’);for(var e=0;e<posts_no;e++){var r,n=t.feed.entry[e],i=n.title.$t;if(e==t.feed.entry.length)break;for(var o=0;o<n.link.length;o++){if(“replies”==n.link[o].rel&&”text/html”==n.link[o].type)var l=n.link[o].title,m=n.link[o].href;if(“alternate”==n.link[o].rel){r=n.link[o].href;break}}var u;try{u=n.media$thumbnail.url}catch(h){s=n.content.$t,a=s.indexOf(“<img”),b=s.indexOf(‘src=”‘,a),c=s.indexOf(‘”‘,b+5),d=s.substr(b+5,c-b-5),u=-1!=a&&-1!=b&&-1!=c&&””!=d?d:”http://2.bp.blogspot.com/-C3Mo0iKKiSw/VGdK808U7rI/AAAAAAAAAmI/W7Ae_dsEVAE/s1600/no-thumb.png”}var p=n.published.$t,f=p.substring(0,4),g=p.substring(5,7),v=p.substring(8,10),w=new Array;if(w[1]=”Jan”,w[2]=”Feb”,w[3]=”Mar”,w[4]=”Apr”,w[5]=”May”,w[6]=”Jun”,w[7]=”Jul”,w[8]=”Aug”,w[9]=”Sep”,w[10]=”Oct”,w[11]=”Nov”,w[12]=”Dec”,document.write(‘<li class=”recent-posts-list”>’),1==showpoststhumbs&&document.write(‘<a href=”‘+r+'”><img class=”recent-post-thumb” src=”‘+u+'”/></a>’),document.write(‘<div class=”recent-post-title”><a href=”‘+r+'” target =”_top”>’+i+”</a></div>”),”content”in n)var A=n.content.$t;else if(“summary”in n)var A=n.summary.$t;else var A=””;var k=/<S[^>]*>/g;if(A=A.replace(k,””),1==post_summary)if(A.length<summary_chars)document.write(A);else{A=A.substring(0,summary_chars);var y=A.lastIndexOf(” “);A=A.substring(0,y),document.write(A+”…”)}var _=””,$=0;document.write(‘<br><div class=”recent-posts-details”>’),1==posts_date&&(_=_+w[parseInt(g,10)]+” “+v+” “+f,$=1),1==readmorelink&&(1==$&&(_+=” | “),_=_+'<a href=”‘+r+'” class=”url” target =”_top”>Read more</a>’,$=1),1==showcommentslink&&(1==$&&(_+=” <br> “),”1 Comments”==l&&(l=”1 Comment”),”0 Comments”==l&&(l=”No Comments”),l='<a href=”‘+m+'” target =”_top”>’+l+”</a>”,_+=l,$=1),document.write(_),document.write(“</div>”),document.write(“</li>”)}document.write(“</ul>”)}
+    </script>
+    <script type=”text/javascript”>
+    var posts_no = 5;
+    var showpoststhumbs = true;
+    var readmorelink = true;
+    var showcommentslink = false;
+    var posts_date = true;
+    var post_summary = true;
+    var summary_chars = 70;
+    </script>
+    <script src=”/feeds/posts/default?orderby=published&alt=json-in-script&callback=showlatestpostswiththumbs”></script>
+    <a style=”font-size: 9px; color: #CECECE; margin-top: 10px;” href=”https://www.mybloggerguides.com/2016/11/stylish-recent-post-widgets-for-blogger-with-thumbnails.html” rel=”nofollow”>Recent Posts Widget</a>
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <link href=’http://fonts.googleapis.com/css?family=Ubuntu+Condensed’ rel=’stylesheet’ type=’text/css’ />
+    <style type=”text/css”>
+    img.recent-post-thumb{width:50px;height:50px;float:right;margin:5px -5px 0px 0px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;padding:3px;background: #fff}
+    ul.recent-posts-container {list-style-type: none; background: #fff;padding: 0px;font:12px ‘Ubuntu Condensed’, sans-serif;margin: 5px 0px 5px 0px;}
+    ul.recent-posts-container li:nth-child(1n+0) {background: #F49A9A; width: 100%}
+    ul.recent-posts-container li:nth-child(2n+0) {background: #FCD092; width: 95%}
+    ul.recent-posts-container li:nth-child(3n+0) {background: #FFF59E; width: 90%;}
+    ul.recent-posts-container li:nth-child(4n+0) {background: #E1EFA0; width: 85%;}
+    ul.recent-posts-container li:nth-child(5n+0) {background: #B1DAEF; width: 80%;}
+    ul.recent-posts-container li {padding:5px 10px;list-style-type: none; margin: 0 0 -5px; color: #777;}
+    .recent-posts-container a { text-decoration:none; }
+    .recent-posts-container a:hover { color: #222;}
+    .post-date {color:#e0c0c6; font-size: 11px; }
+    .recent-post-title a {font-size: 14px;color: #444; font-weight: bold;}
+    .recent-post-title {padding: 6px 0px;}
+    .recent-posts-details a{ color: #222;}
+    .recent-posts-details {padding: 5px 0px 5px; }
+    </style>
+    
+<div class=”recentpoststyle”>
+<script type=”text/javascript”>
+function showlatestposts(e){for(var t=0;t<posts_no;t++){var r,s=e.feed.entry[t],n=s.title.$t;if(t==e.feed.entry.length)break;for(var a=0;a<s.link.length;a++)if(“alternate”==s.link[a].rel){r=s.link[a].href;break}n=n.link(r);var i=”… read more”;i=i.link(r);var l=s.published.$t,o=l.substring(0,4),u=l.substring(5,7),c=l.substring(8,10),m=new Array;if(m[1]=”Jan”,m[2]=”Feb”,m[3]=”Mar”,m[4]=”Apr”,m[5]=”May”,m[6]=”Jun”,m[7]=”Jul”,m[8]=”Aug”,m[9]=”Sep”,m[10]=”Oct”,m[11]=”Nov”,m[12]=”Dec”,”content”in s)var d=s.content.$t;else if(“summary”in s)var d=s.summary.$t;else var d=””;var v=/<S[^>]*>/g;if(d=d.replace(v,””),document.write(‘<li class=”recent-post-title”>’),document.write(n),document.write(‘</li><div class=”recent-post-summ”>’),1==post_summary)if(d.length<summary_chars)document.write(d);else{d=d.substring(0,summary_chars);var f=d.lastIndexOf(” “);d=d.substring(0,f),document.write(d+” “+i)}document.write(“</div>”),1==posts_date&&document.write(‘<div class=”post-date”>’+m[parseInt(u,10)]+” “+c+” “+o+”</div>”)}}
+</script>
+<script type=”text/javascript”>
+var posts_no = 5;var posts_date = true;var post_summary = true;var summary_chars = 80;</script>
+<script src=”/feeds/posts/default?orderby=published&amp;alt=json-in-script&amp;callback=showlatestposts”>
+</script><a style=”font-size: 9px; color: #CECECE;margin-top:10px;” href=”https://www.mybloggerguides.com/2016/11/stylish-recent-post-widgets-for-blogger-with-thumbnails.html” rel=”nofollow”>Recent Posts Widget</a>
+<noscript>Your browser does not support JavaScript!</noscript>
+<style type=”text/css”>
+.recentpoststyle {counter-reset: countposts;list-style-type: none;}
+.recentpoststyle a {text-decoration: none;color: #49A8D1;}
+.recentpoststyle a:hover {color: #000;}
+.recentpoststyle li:before {content: counter(countposts,decimal);counter-increment: countposts;float: left;z-index: 1;position:relative;font-size: 15px;font-weight: bold;color:#fff;background:#69B7E2; margin:13px 5px 0px -6px;line-height:30px;width:30px;height:30px;text-align:center;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}li.recent-post-title{margin-bottom: 5px;padding: 0;}
+.recent-post-title a {color: #444;text-decoration: none;font: bold 13px “Avant Garde”,Avantgarde,”Century Gothic”,CenturyGothic,AppleGothic,sans-serif;}
+.post-date {font-size: 11px;color: #999;margin:5px 0px 15px 32px;}
+.recent-post-summ {border-left:1px solid #69B7E2; color: #777; padding: 0px 5px 0px 20px; margin-left: 10px; font: 15px Garamond,Baskerville,”Baskerville Old Face”,”Hoefler Text”,”Times New Roman”,serif;}
+</style>
+</div>
